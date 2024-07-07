@@ -3,8 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :post
   belongs_to :user
   
-  
-  
   validate :content_does_not_contain_prohibited_keywords
 
   private
