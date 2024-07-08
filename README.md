@@ -25,3 +25,19 @@ validation failures and what the users may experience while the import is runnin
 
 
 The point is to be prepared during the technical interview to answer as many edge case questions about the script, strengths and weaknesses of your approach
+
+## Manual setup
+
+1. run `bundle install`
+2. setup DB `rails db:setup`
+3. run `ruby generate_comments_csv.rb`
+3. run `rails s`
+4. run `redis-server`
+5. run `sidekiq`
+
+## Usage instructions
+
+- Navigate to `/motor_admin` - easy to use admin panel with nice records display 
+- Navigate to `/maintenance_tasks` -> find `Maintenance::ImportCommentsTask`, select `comments.csv` file and press `Run`
+- Navigate to `/sidekiq` -> here you can monitor the progress of the import
+- When the import is finished, you can view logs in `log/sidekiq.log` file
